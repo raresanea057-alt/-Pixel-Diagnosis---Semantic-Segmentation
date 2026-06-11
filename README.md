@@ -66,10 +66,8 @@ Conv → BatchNorm → ReLU
 
 | Model             | Val mIoU ↑ | Val Loss ↓ | Trainable Parameters |
 | ----------------- | ---------- | ---------- | -------------------- |
-| TinyUNet-Scratch  | `TODO`     | `TODO`     | `TODO`               |
+| TinyUNet-Scratch  | `0.5347`     | `0.5893`     | `31,037,763`               |
 | TinyUNet-ResNet18 | `0.7118`     | `0.4452`     | `24,950,403`               |
-
-> Replace the `TODO` values with the metrics reported at the end of each notebook.
 
 ## Key Findings
 
