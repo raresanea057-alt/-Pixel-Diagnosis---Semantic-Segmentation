@@ -124,5 +124,5 @@ allowing a direct comparison between the pretrained and scratch models.
 
 ## Conclusion
 
-The pretrained ResNet18 backbone achieved X% higher mIoU than the model trained from scratch, demonstrating the effectiveness of transfer learning on small semantic segmentation datasets.
+The pretrained ResNet18 backbone achieved 32.91% higher mIoU than the model trained from scratch, demonstrating the effectiveness of transfer learning on small semantic segmentation datasets.
 
