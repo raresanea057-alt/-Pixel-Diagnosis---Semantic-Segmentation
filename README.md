@@ -30,7 +30,7 @@ Two architectures were compared using the **same training setup** and **same tra
 - **200** training images
 - **30** validation images
 
-## 1. TinyUNet-ResNet18 (`segmentation_fixed.ipynb`)
+## 1. TinyUNet-ResNet18 (`unet_resnet.ipynb`)
 
 A standard U-Net decoder attached to a pretrained **ResNet18** encoder (ImageNet weights).
 
@@ -67,16 +67,9 @@ Conv → BatchNorm → ReLU
 | Model             | Val mIoU ↑ | Val Loss ↓ | Trainable Parameters |
 | ----------------- | ---------- | ---------- | -------------------- |
 | TinyUNet-Scratch  | `TODO`     | `TODO`     | `TODO`               |
-| TinyUNet-ResNet18 | `TODO`     | `TODO`     | `TODO`               |
+| TinyUNet-ResNet18 | `0.7118`     | `0.4452`     | `24,950,403`               |
 
 > Replace the `TODO` values with the metrics reported at the end of each notebook.
-
-### Reference Scores
-
-* **Baseline mIoU:** ~0.20
-* **Best known mIoU:** ~0.77
-
----
 
 ## Key Findings
 
@@ -84,46 +77,11 @@ Conv → BatchNorm → ReLU
 
 The ResNet18-based model is expected to converge faster and achieve a higher validation mIoU thanks to ImageNet pretraining. The advantage is particularly important for the thin **Border** class, where learning meaningful features from only 230 training images is challenging.
 
-### Improvements Over the Starter Code
-
-Several issues in the original implementation were corrected:
-
-* Fixed inference mode by replacing:
-
-  ```python
-  model.eval()
-  ```
-
-  with
-
-  ```python
-  unet.eval()
-  ```
-
-  ensuring BatchNorm layers operate in evaluation mode.
-
-* Added ImageNet normalization:
-
-  ```python
-  mean = [0.485, 0.456, 0.406]
-  std  = [0.229, 0.224, 0.225]
-  ```
-
-  Without normalization, the pretrained ResNet18 backbone receives out-of-distribution inputs.
-
-* Randomized the dataset before splitting to avoid ordering bias:
-
-  ```python
-  random.shuffle(all_files)
-  ```
-
----
-
 ## Repository Structure
 
 ```text
 .
-├── segmentation_fixed.ipynb   # TinyUNet + pretrained ResNet18 backbone
+├── unet_resnet.ipynb   # TinyUNet + pretrained ResNet18 backbone
 ├── unet_scratch.ipynb         # TinyUNet trained from scratch
 └── README.md
 ```
