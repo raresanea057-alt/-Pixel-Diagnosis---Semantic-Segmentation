@@ -102,7 +102,7 @@ val_files   = all_files[200:]
 Run the notebooks independently:
 
 ```text
-segmentation_fixed.ipynb
+unet_resnet.ipynb
 unet_scratch.ipynb
 ```
 
