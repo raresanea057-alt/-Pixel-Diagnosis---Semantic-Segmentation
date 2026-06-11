@@ -1,5 +1,13 @@
 # Animal Image Segmentation
 
+## TL;DR
+
+- Built two semantic segmentation models for pixel-wise animal segmentation.
+- Compared **TinyUNet-ResNet18 (pretrained)** against **TinyUNet-Scratch**.
+- Trained on **230 labeled images** and evaluated using **Mean IoU (mIoU)**.
+- Demonstrated the impact of **transfer learning** on small segmentation datasets.
+- Best validation performance: **`0.7118 mIoU`**.
+
 ## Task
 
 Given a **256×256 RGB image** of an animal at a veterinary clinic, predict the class of every pixel.
@@ -113,4 +121,8 @@ At the end of training, each notebook automatically reports:
 * Number of Trainable Parameters
 
 allowing a direct comparison between the pretrained and scratch models.
+
+## Conclusion
+
+The pretrained ResNet18 backbone achieved X% higher mIoU than the model trained from scratch, demonstrating the effectiveness of transfer learning on small semantic segmentation datasets.
 
