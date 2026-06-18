@@ -11,6 +11,7 @@
 ## Task
 
 Given a **256×256 RGB image** of an animal at a veterinary clinic, predict the class of every pixel.
+Interesting part of the problem: There wre only 230 training images which resulted in model having difficulties converging
 
 | Class ID | Description |
 |----------|-------------|
